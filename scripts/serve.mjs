@@ -1,36 +1,23 @@
-import { existsSync } from "node:fs";
 import { extname, resolve } from "node:path";
 
-const root = resolve(import.meta.dirname, "../dist");
-if (!existsSync(resolve(root, "index.html"))) {
-  throw new Error("dist/index.html is missing; run `bun run build` first");
-}
-
-const contentTypes = {
+const root = resolve(import.meta.dirname, "..", "dist");
+const types = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
-  ".json": "application/json; charset=utf-8",
-  ".png": "image/png",
   ".svg": "image/svg+xml",
-  ".webmanifest": "application/manifest+json; charset=utf-8",
   ".webp": "image/webp",
-  ".woff2": "font/woff2",
-  ".xml": "application/xml; charset=utf-8",
 };
 
-const server = Bun.serve({
+Bun.serve({
   hostname: "127.0.0.1",
-  port: Number(Bun.env.PORT ?? 4321),
+  port: 4321,
   async fetch(request) {
     const url = new URL(request.url);
-    const cleanPath = decodeURIComponent(url.pathname).replace(/^\/+/, "");
-    const requested = resolve(root, cleanPath || "index.html");
-    const file = Bun.file(requested);
-    if (requested.startsWith(`${root}/`) && await file.exists()) {
-      return new Response(file, { headers: { "content-type": contentTypes[extname(requested)] ?? "application/octet-stream" } });
-    }
-    return new Response(Bun.file(resolve(root, "404.html")), { status: 404, headers: { "content-type": contentTypes[".html"] } });
+    const path = url.pathname === "/" ? "index.html" : url.pathname.slice(1);
+    const file = Bun.file(resolve(root, path));
+    if (!await file.exists()) return new Response(null, { status: 404 });
+    return new Response(file, { headers: { "content-type": types[extname(path)] ?? "application/octet-stream" } });
   },
 });
 
-console.log(`Vela www: http://${server.hostname}:${server.port}`);
+console.log("vela.space preview: http://127.0.0.1:4321");
