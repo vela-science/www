@@ -1,0 +1,102 @@
+{
+  "schema": "vela.www.extraction.v1",
+  "created": "2026-08-27",
+  "source": {
+    "repository": "private vela-web",
+    "commit": "b7de325c0c59bb0d83f0f00c8f181dcf2218def2",
+    "tree": "9f8796b30d03b2fc07ab053ebdfa10d5ad764952",
+    "worktree_state": "clean detached HEAD",
+    "tracked_www_files": 39,
+    "stashes_observed_and_untouched": 2
+  },
+  "candidate": {
+    "intended_repository": "vela-science/www",
+    "canonical_domain": "https://vela.space",
+    "runtime": "static HTML and CSS",
+    "published_routes": ["/"],
+    "fallback": "/404.html",
+    "private_dependencies": 0,
+    "runtime_javascript_files": 0,
+    "bundled_fonts": 1
+  },
+  "byte_identical_assets": [
+    {
+      "source": "apps/www/src/assets/paintings/home-night-passage.webp",
+      "candidate": "src/assets/home-night-passage.webp",
+      "sha256": "ff3d33da757c0dc296380051d215a4d9d87c820f0b4d6d4ac904a7f8b4bfc1ac",
+      "rights": "project-owned editorial painting; CC BY 4.0"
+    },
+    {
+      "source": "apps/www/assets/og-image.png",
+      "candidate": "src/assets/og-image.png",
+      "sha256": "f1691367a8cde4bdacb64f808be277620bd589261af637aeb341bb75ff18a7fe",
+      "rights": "project-owned derivative of editorial painting; CC BY 4.0"
+    },
+    {
+      "source": "packages/brand/marks/exports/svg/vela-symbol-full-reversed.svg",
+      "candidate": "src/assets/vela-symbol.svg",
+      "sha256": "1517cf17797bc8eb92e27d54152cbbd01190fd457458a14b253573274e0e6ffb",
+      "rights": "project-owned Vela mark; all trademark rights reserved"
+    },
+    {
+      "source": "packages/brand/fonts/web/ibm-plex-mono-400-latin.woff2",
+      "candidate": "src/assets/fonts/ibm-plex-mono-400-latin.woff2",
+      "sha256": "c36f509c0a8f9f85f29cb44bc8701d8a9e0b14c499e77a884f789ead7093a7ac",
+      "rights": "SIL Open Font License 1.1; complete notice in licenses/OFL-IBM-PLEX.txt"
+    }
+  ],
+  "source_contracts_used": [
+    "AGENTS.md",
+    "apps/www/AGENTS.md",
+    "apps/www/PRODUCT.md",
+    "apps/www/DESIGN.md",
+    "apps/www/src/app/layout.tsx",
+    "apps/www/src/app/not-found.tsx",
+    "apps/www/src/components/home/home-opening.tsx",
+    "apps/www/src/components/home/home-opening.module.css",
+    "apps/www/src/data/constants.ts",
+    "apps/www/src/data/editorial-navigation.ts",
+    "apps/www/src/data/home-story.ts",
+    "apps/www/vercel.json",
+    "packages/brand/licenses/README.md"
+  ],
+  "rewritten_not_copied": [
+    "masthead and destination rail",
+    "responsive CSS and constrained-mode rules",
+    "404 composition",
+    "static build and local server",
+    "boundary, license, and release checks",
+    "Vercel configuration"
+  ],
+  "excluded": [
+    {
+      "material": "Zodiak, Gambetta, and Switzer WOFF2 files",
+      "reason": "Fontshare/ITF redistribution restriction"
+    },
+    {
+      "material": "Tailwind Plus Radiant-derived sections and private licensed registry source",
+      "reason": "commercial end-product source is not appropriate for a public source repository"
+    },
+    {
+      "material": "@vela/ui, @vela/brand, and @vela/projection-data workspace imports",
+      "reason": "standalone public custody and no private dependency"
+    },
+    {
+      "material": "apps/problems source, WebMCP, authentication, databases, and projection readers",
+      "reason": "owned by vela-science/problems; no component or product duplication"
+    },
+    {
+      "material": "contact.webp and removed editorial essay assets",
+      "reason": "one retained painting is sufficient for the only published page and static 404"
+    }
+  ],
+  "vela_release": {
+    "version": "0.977.6",
+    "protocol": 1,
+    "tag": "v0.977.6",
+    "tag_object": "4a562d4529f6a329d938fc427bc73c4cbff90767",
+    "release_commit": "9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59",
+    "release_tree": "1332713f627ac73c235e4f9a7afe206499717154",
+    "protocol_root": "sha256:bf1ef68165bccbc4d2e8a854f78c70448cc7de771bac23329f7a8ca115303f56"
+  }
+}
