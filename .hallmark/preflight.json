@@ -1,9 +1,0 @@
-{
-  "date": "2026-08-27",
-  "framework": "vanilla-static-html",
-  "font_stack": "System serif and sans plus OFL IBM Plex Mono",
-  "palette": "Vela Editorial Folio tokens",
-  "motion": "motion-cut with one opacity-only plate arrival",
-  "spacing": "4px base scale",
-  "source": "private vela-web apps/www at b7de325c0c59bb0d83f0f00c8f181dcf2218def2"
-}

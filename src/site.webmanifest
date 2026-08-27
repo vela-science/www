@@ -1,9 +1,0 @@
-{
-  "name": "Vela",
-  "short_name": "Vela",
-  "description": "Version control for scientific state.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#081224",
-  "theme_color": "#081224"
-}

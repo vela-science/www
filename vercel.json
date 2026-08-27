@@ -5,7 +5,6 @@
   "buildCommand": "bun run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -14,29 +13,16 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; img-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'" }
       ]
     }
   ],
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.vela.space" }], "destination": "https://vela.space/:path*", "permanent": true },
-    { "source": "/.well-known/vela-site.json", "destination": "https://problems.science/.well-known/vela-site.json", "permanent": true },
-    { "source": "/repositories", "destination": "https://problems.science/repositories", "permanent": true },
-    { "source": "/repositories/:path*", "destination": "https://problems.science/repositories/:path*", "permanent": true },
-    { "source": "/frontiers", "destination": "https://problems.science/repositories", "permanent": true },
-    { "source": "/frontiers/:path*", "destination": "https://problems.science/repositories/:path*", "permanent": true },
-    { "source": "/problems", "destination": "https://problems.science/problems", "permanent": true },
-    { "source": "/search", "destination": "https://problems.science/search", "permanent": true },
-    { "source": "/release", "destination": "https://github.com/vela-science/vela/releases/tag/v0.977.6", "permanent": true },
-    { "source": "/source", "destination": "https://github.com/vela-science/vela/tree/9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59", "permanent": true },
-    { "source": "/developers", "destination": "https://github.com/vela-science/vela/blob/9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59/docs/QUICKSTART.md", "permanent": true },
-    { "source": "/security", "destination": "https://github.com/vela-science/vela/blob/9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59/SECURITY.md", "permanent": true },
-    { "source": "/docs", "destination": "https://github.com/vela-science/vela/tree/9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59/docs", "permanent": true },
-    { "source": "/docs/:path*", "destination": "https://github.com/vela-science/vela/tree/9ac8e7730bfb63a3b8eb1d2e1d91081c3e703c59/docs/:path*", "permanent": true },
-    { "source": "/essays", "destination": "/", "permanent": true },
-    { "source": "/manifesto", "destination": "/", "permanent": true },
-    { "source": "/catalog", "destination": "/", "permanent": true },
-    { "source": "/gigafactories", "destination": "/", "permanent": true },
-    { "source": "/terafactories", "destination": "/", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.vela.space" }],
+      "destination": "https://vela.space/:path*",
+      "permanent": true
+    }
   ]
 }
